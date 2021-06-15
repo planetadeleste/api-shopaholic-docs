@@ -6,7 +6,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'planetadelete', // Usually your GitHub org/user name.
+  organizationName: 'planetadeleste', // Usually your GitHub org/user name.
   projectName: 'api-shopaholic-docs', // Usually your repo name.
   themeConfig: {
     navbar: {
@@ -44,10 +44,6 @@ module.exports = {
             {
               label: 'Style Guide',
               to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
             },
           ],
         },

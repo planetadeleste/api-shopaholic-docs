@@ -1,7 +1,7 @@
 module.exports = {
   ShopaholicDocs: {
     Docs: [
-      'doc1', 'doc2', 'doc3',
+      'main',
       {
         Plugins: ['plugins/api-toolbox', 'plugins/api-shopaholic'],
       },

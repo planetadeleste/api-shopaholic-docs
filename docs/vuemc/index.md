@@ -21,21 +21,16 @@ Models and Collections extends vue-mc package, first see [their docs](https://vu
 
 ```bash
 # Add main packages
-yarn add @bit/planetadeleste.shopaholic-mc.base
-yarn add @bit/planetadeleste.shopaholic-mc.shopaholic
-
-# Add types
-yarn add -D @bit/planetadeleste.shopaholic-mc.types.vue-mc
-yarn add -D @bit/planetadeleste.shopaholic-mc.types.vue-mc-module
+yarn add @planetadeleste/vue-mc
 ```
 
 ### Configuration
 
 On your vue project, add this lines
 
-```javascript
+```ts
 import Vue from "vue";
-import { Base } from "@bit/planetadeleste.shopaholic-mc.base";
+import { Base } from "@planetadeleste/vue-mc";
 
 // Set API Model
 const laroute = require("./laroute.js");
@@ -45,9 +40,9 @@ Base.$http = Vue.axios;
 
 You can use `vuex` modules for loading, messaging and auth
 
-```javascript
+```ts
 import Vue from "vue";
-import { Base } from "@bit/planetadeleste.shopaholic-mc.base";
+import { Base } from "@planetadeleste/vue-mc";
 import { AuthModule } from "@/store/auth";
 import { LoadingModule } from "@/store/loading";
 import { FlashModule } from "@/store/flash";

@@ -43,7 +43,7 @@ slug: /components
 
 ---
 
-```vue
+```html
 <template>
   <data-table
     :headers="headers"
@@ -76,51 +76,51 @@ slug: /components
 </template>
 
 <script lang="ts">
-import { Mixins, Component, Watch } from "vue-property-decorator";
-import ProductMixin from "@/modules/products/mixins/Product";
-import DataTable from "@bit/planetadeleste.gui.ui.data-table/index.vue";
-import ActiveIcon from "@/components/common/ActiveIcon.vue";
-import ProductsForm from "@/modules/products/components/Form.vue";
-import NameWithAvatar from "@/components/common/NameWithAvatar.vue";
-import { DataTableHeader } from "vuetify";
+  import { Mixins, Component, Watch } from "vue-property-decorator";
+  import ProductMixin from "@/modules/products/mixins/Product";
+  import DataTable from "@bit/planetadeleste.gui.ui.data-table/index.vue";
+  import ActiveIcon from "@/components/common/ActiveIcon.vue";
+  import ProductsForm from "@/modules/products/components/Form.vue";
+  import NameWithAvatar from "@/components/common/NameWithAvatar.vue";
+  import { DataTableHeader } from "vuetify";
 
-@Component({
-  components: {
-    DataTable,
-    ActiveIcon,
-    ProductsForm,
-    NameWithAvatar,
-  },
-})
-export default class ProductsList extends Mixins(ProductMixin) {
-  headers: DataTableHeader[] = [
-    { text: "name", value: "name" },
-    { text: "active", value: "active", class: "mw-150", sortable: false },
-    {
-      text: "price",
-      value: "price",
-      sortable: false,
+  @Component({
+    components: {
+      DataTable,
+      ActiveIcon,
+      ProductsForm,
+      NameWithAvatar,
     },
-    {
-      text: "category",
-      value: "category_name",
-    },
-    {
-      text: "actions",
-      value: "actions",
-      align: "end",
-      sortable: false,
-    },
-  ];
+  })
+  export default class ProductsList extends Mixins(ProductMixin) {
+    headers: DataTableHeader[] = [
+      { text: "name", value: "name" },
+      { text: "active", value: "active", class: "mw-150", sortable: false },
+      {
+        text: "price",
+        value: "price",
+        sortable: false,
+      },
+      {
+        text: "category",
+        value: "category_name",
+      },
+      {
+        text: "actions",
+        value: "actions",
+        align: "end",
+        sortable: false,
+      },
+    ];
 
-  mounted() {
-    this.headers = this.$_.map(this.headers, (item) => {
-      item.text = this.$_.toString(this.$t(item.text));
-      return item;
-    });
-    this.index();
+    mounted() {
+      this.headers = this.$_.map(this.headers, (item) => {
+        item.text = this.$_.toString(this.$t(item.text));
+        return item;
+      });
+      this.index();
+    }
   }
-}
 </script>
 ```
 

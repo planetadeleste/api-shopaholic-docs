@@ -41,7 +41,7 @@ sidebar_label: FormObserver
 
 ---
 
-```vue
+```html
 <template>
   <v-form class="fill-height" @submit.prevent v-if="obModel">
     <form-observer @save="save" @cancel="cancel" :loading="isLoading">
@@ -51,17 +51,17 @@ sidebar_label: FormObserver
 </template>
 
 <script lang="ts">
-import { Mixins, Component, PropSync } from "vue-property-decorator";
-import CategoryMixin from "@/modules/categories/mixins/Category";
-import FormObserver from "@bit/planetadeleste.gui.form.form-observer/Observer.vue";
-import Settings from "@/modules/categories/components/Settings.vue";
+  import { Mixins, Component, PropSync } from "vue-property-decorator";
+  import CategoryMixin from "@/modules/categories/mixins/Category";
+  import FormObserver from "@bit/planetadeleste.gui.form.form-observer/Observer.vue";
+  import Settings from "@/modules/categories/components/Settings.vue";
 
-@Component({
-  components: {
-    FormObserver,
-    Settings,
-  },
-})
-export default class CategoriesForm extends Mixins(CategoryMixin) {}
+  @Component({
+    components: {
+      FormObserver,
+      Settings,
+    },
+  })
+  export default class CategoriesForm extends Mixins(CategoryMixin) {}
 </script>
 ```

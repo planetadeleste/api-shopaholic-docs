@@ -1,5 +1,5 @@
 ---
-id: doc1
+id: main
 title: Shopaholic API
 sidebar_label: Introduction
 slug: /
